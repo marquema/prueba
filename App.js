@@ -6,11 +6,10 @@ server.listen(process.env.port || process.env.PORT || 3978,
 function () {    
     console.log('%s escuchando a %s', server.name, server.url);  
 });  
-
-// xchat connector for communicating with the Bot Framework Service 
+// chat connector for communicating with the Bot Framework Service 
 var connector = new builder.ChatConnector({     
     appId: 'c912abfb-969c-4f76-bc5d-dc858809e135',     
-    appPassword: 'lyhdCKYCLM{{*bxeE37814('
+    appPassword: 'gtpEZD8368[;onmmQWHV1+:'
 });
 // Listen for messages from users  
 server.post('/api/messages', connector.listen());  
@@ -18,6 +17,9 @@ server.post('/api/messages', connector.listen());
 var bot = new builder.UniversalBot(connector, function (session) {     
 session.send("Tu has dicho: %s", session.message.text); 
 });
+
+
+
 
 
 function sendGetSentimentRequest(message) {      
@@ -42,5 +44,7 @@ function sendGetSentimentRequest(message) {
           api_key: '9n8AIaWULVu37sA1k8eE38IwnCCjmXP9'        
        }    
     }    
+
+
     return rp(options)
  ;}
