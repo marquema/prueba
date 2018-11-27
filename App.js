@@ -9,8 +9,8 @@ function () {
 
 // xchat connector for communicating with the Bot Framework Service 
 var connector = new builder.ChatConnector({     
-    appId: process.env.MICROSOFT_APP_ID,     
-    appPassword: process.env.MICROSOFT_APP_PASSWORD
+    appId: 'c912abfb-969c-4f76-bc5d-dc858809e135',     
+    appPassword: 'lyhdCKYCLM{{*bxeE37814('
 });
 // Listen for messages from users  
 server.post('/api/messages', connector.listen());  
@@ -18,6 +18,7 @@ server.post('/api/messages', connector.listen());
 var bot = new builder.UniversalBot(connector, function (session) {     
 session.send("Tu has dicho: %s", session.message.text); 
 });
+
 
 function sendGetSentimentRequest(message) {      
     var options = {        
